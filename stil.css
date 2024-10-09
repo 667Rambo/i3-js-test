@@ -1,0 +1,157 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin: 0;
+}
+
+/* Glavni kviz dio s fleksibilnom širinom */
+#quiz {
+    max-width: 80vw;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+/* Gumbi za pitanja */
+.question-button {
+    border: none;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.5vw; 
+}
+
+.question-button.active {
+    background-color: #28a745;
+}
+
+.question-button:hover {
+    background-color: #0056b3; 
+}
+
+.question-button:active {
+    background-color: #0056b3; 
+}
+
+/* Slide stilovi, svi osim trenutnog slajda su skriveni */
+.slide {
+    display: none;
+}
+
+/* Naslovi pitanja */
+.slide h2 {
+    margin-bottom: 15px;
+}
+
+/* Stilovi za odgovore */
+.answer {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1.2vw; 
+}
+
+.answer:hover {
+    background-color: #e7f0ff; 
+}
+
+.answer.selected {
+    background-color: #28a745;
+    color: white;
+    border-color: #28a745;
+}
+
+/* Gumbi za navigaciju kroz slajdove */
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    font-size: 1.5vw; 
+    cursor: pointer;
+    border-radius: 5px;
+    border: none; 
+}
+
+button:disabled {
+    background-color: #ccc; 
+    cursor: not-allowed; 
+}
+
+/* Stilovi za rezultate i poruke upozorenja */
+#results, #warning-message {
+    margin-top: 20px;
+    font-size: 1.2vw;
+}
+
+/* Skriveno upozorenje */
+#warning-message {
+    display: none;
+    color: red;
+}
+
+/* Stilovi za mobilne uređaje do 600px širine */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    #quiz {
+        max-width: 90%;
+    }
+
+    .question-button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .answer {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 8px 10px;
+    }
+}
+
+/* Stilovi za veće ekrane preko 3000px širine */
+@media (min-width: 3000px) {
+    #quiz {
+        max-width: 60%;
+    }
+
+    .question-button, .answer, button {
+        font-size: 24px;
+    }
+}
+
+/* Stilovi za izuzetno široke ekrane (širina preko 8000px) */
+@media (min-width: 8000px) {
+    .progress-bar {
+        flex-direction: row;
+    }
+
+    .question-button {
+        padding: 20px 25px;
+        font-size: 36px;
+    }
+
+    .answer {
+        padding: 20px;
+        font-size: 36px;
+    }
+}
